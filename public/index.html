@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3학년 퀴즈 만들기</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <h1>3학년 퀴즈 만들기</h1>
+      <p>교과, 단원, 난이도를 고르면 4지선다 문제 5개를 만들어 드려요.</p>
+    </header>
+
+    <main>
+      <form id="quiz-form" class="panel">
+        <label class="field">
+          <span class="field-name">교과</span>
+          <select id="subject" name="subject" required></select>
+        </label>
+        <label class="field">
+          <span class="field-name">단원</span>
+          <select id="unit" name="unit" required></select>
+        </label>
+        <fieldset class="field">
+          <legend class="field-name">난이도</legend>
+          <div id="difficulty" class="segmented"></div>
+        </fieldset>
+        <button type="submit" id="submit" class="primary">퀴즈 만들기</button>
+        <p id="difficulty-guide" class="hint"></p>
+        <p id="source-hint" class="hint"></p>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section id="result" hidden>
+        <div class="result-head">
+          <h2 id="result-title"></h2>
+          <span id="source" class="badge"></span>
+          <button type="button" id="reveal-all" class="secondary" aria-pressed="false">정답 모두 보기</button>
+        </div>
+        <p id="notice" class="notice" hidden></p>
+        <ol id="cards" class="cards"></ol>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
